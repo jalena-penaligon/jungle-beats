@@ -76,7 +76,14 @@ class LinkedList
       includes?(data, node = next_node)
     else
       false
-    end  
+    end
+  end
+
+  def pop
+    new_tail = node_position(head, count - 2)
+    old_tail = new_tail.next_node
+    new_tail.next_node = nil
+    old_tail.data
   end
 
 end

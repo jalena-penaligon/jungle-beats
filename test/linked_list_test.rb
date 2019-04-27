@@ -122,15 +122,14 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_pop_removes_last_node
-    skip
     list = LinkedList.new
     list.append("shi")
     list.append("shu")
     list.prepend("deep")
     list.append("blop")
     list.insert(1, "woo")
-    list.pop
-    list.pop
+    assert_equal "blop", list.pop
+    assert_equal "shu", list.pop
 
     assert_equal "deep woo shi", list.to_string
   end
